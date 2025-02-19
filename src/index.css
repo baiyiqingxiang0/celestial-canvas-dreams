@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -52,7 +51,11 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border select-none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
   
   body {
@@ -70,6 +73,34 @@
   }
   50% {
     opacity: 0.3;
+  }
+}
+
+.starry-text {
+  background: linear-gradient(
+    300deg,
+    #e0c3fc 0%,
+    #8ec5fc 20%,
+    #b5fffc 40%,
+    #97d9e1 60%,
+    #7f7fd5 80%,
+    #86a8e7 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: starry-text-flow 8s linear infinite;
+}
+
+@keyframes starry-text-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 

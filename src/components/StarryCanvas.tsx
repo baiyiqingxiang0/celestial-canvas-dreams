@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from 'react';
 
 interface Particle {
@@ -29,15 +28,15 @@ const StarryCanvas = () => {
 
   const initParticles = () => {
     const particles: Particle[] = [];
-    for (let i = 0; i < 200; i++) {
+    for (let i = 0; i < 600; i++) {
       particles.push({
         x: Math.random() * dimensions.width,
         y: Math.random() * dimensions.height,
-        size: Math.random() * 3 + 1,
-        speedX: (Math.random() - 0.5) * 0.5,
-        speedY: (Math.random() - 0.5) * 0.5,
+        size: Math.random() * 4 + 1,
+        speedX: (Math.random() - 0.5) * 0.8,
+        speedY: (Math.random() - 0.5) * 0.8,
         hue: Math.random() * 360,
-        opacity: Math.random() * 0.7 + 0.3,
+        opacity: Math.random() * 0.8 + 0.2,
         trail: [],
       });
     }
